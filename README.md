@@ -1,8 +1,8 @@
 # Cursor Usage Tracker
 
-A command-line tool to track and visualize your Cursor AI usage, including API requests and token consumption, with color-coded indicators.
+A command-line tool to track and visualize your Cursor AI premium request usage, with color-coded indicators.
 
-TODO: [Screenshot]
+![cursor-usage-screenshot](https://github.com/user-attachments/assets/8e61496c-9459-470b-b729-e5c11d7718e9)
 
 ## Features
 
@@ -20,10 +20,16 @@ TODO: [Screenshot]
 Install the package globally from npm:
 
 ```bash
-npm install -g cursor-usage-tracker
+npm install -g cli-cursor-usage-tracker
 ```
 
-This will make the `cursor-usage` command available globally in your terminal.
+That's it! Now you can run:
+
+```bash
+$ cursor-usage
+```
+
+Anywhere in your terminal to check your Cursor AI usage! 🎉
 
 ### Option 2: Local Development
 
@@ -53,12 +59,25 @@ If you installed the package globally, simply run:
 cursor-usage
 ```
 
+#### Available Options
+
+- `--clean`: Remove all local configuration files and cached data
+  ```bash
+  cursor-usage --clean
+  ```
+  Use this if you want to reset the tool's configuration or start fresh.
+
 ### Running Locally
 
 If you're working with the local development version:
 
 ```bash
 npm start
+```
+
+To clean local configuration files:
+```bash
+npm run clean
 ```
 
 On first run, you'll be prompted to choose an authentication method:
@@ -74,7 +93,7 @@ Here's a detailed guide to finding your Cursor session token:
 1. Log in to Cursor
 2. Go to Settings by visiting: https://www.cursor.com/settings
 
-TODO: [Screenshot: Cursor settings page]
+![screenshot (1)](https://github.com/user-attachments/assets/bb711ae6-d255-4972-9983-dde6e69972ba)
 
 #### Step 2: Open Browser Developer Tools
 
@@ -83,21 +102,21 @@ TODO: [Screenshot: Cursor settings page]
    - Firefox: `F12` or `Ctrl+Shift+I` (Windows/Linux) or `Cmd+Option+I` (Mac)
    - Safari: First enable Developer menu in Preferences > Advanced, then press `Cmd+Option+I`
 
-TODO: [Screenshot: Browser context menu showing "Inspect" option]
+![screenshot (2)](https://github.com/user-attachments/assets/c8d34ccd-ef40-42e9-949c-e3b8e492e058)
 
 #### Step 3: Navigate to Network Tab
 
 1. Click the "Network" tab in the developer tools
 2. You may need to refresh the page (`F5` or `Ctrl+R`) to see network requests
 
-TODO: [Screenshot: Developer tools with Network tab highlighted]
+![screenshot (3)](https://github.com/user-attachments/assets/67e22e5d-e431-43d2-900d-a747e3e7f4d8)
 
 #### Step 4: Find the Usage API Request
 
 1. In the network requests list, look for a request to: `https://www.cursor.com/api/usage?user=...`
 2. This request contains all the information you need
 
-TODO: [Screenshot: Network tab showing the usage API request]
+![screenshot (4)](https://github.com/user-attachments/assets/f8049abd-e8dd-4324-9f65-15c734fc796f)
 
 #### Method 1: Using the Full CURL Command (Recommended)
 
@@ -106,14 +125,19 @@ This is the easiest method as it automatically extracts everything needed:
 1. Right-click on the usage API request in the Network tab
 2. Select "Copy" > "Copy as cURL" (or similar, depending on your browser)
 
-TODO: [Screenshot: Context menu showing "Copy as cURL" option]
+![screenshot (5)](https://github.com/user-attachments/assets/71f3ef0b-eb8d-4fb3-acd7-f4dfc3fe7935)
 
 3. When running the script, select option 1 when prompted
 4. Paste the entire curl command (Ctrl+V on Windows, Cmd+V on Mac)
 5. Press Enter twice to complete the input
 6. The script will automatically extract your session token and user ID from the curl command
 
-TODO: [Screenshot: Terminal showing the paste input prompt with curl command]
+Step 1:
+![screenshot (6)](https://github.com/user-attachments/assets/a1965334-d635-4e3c-8ea1-abc787710c98)
+
+Step 2:
+![screenshot (8)](https://github.com/user-attachments/assets/7e9adac7-dfe1-4906-9cae-411174833896)
+
 
 #### Method 2: Finding Your Session Token
 
@@ -126,7 +150,12 @@ TODO: [Screenshot: Terminal showing the paste input prompt with curl command]
 
 Note: The token already contains your user ID, so you don't need to extract it separately.
 
-TODO: [Screenshot: Request headers showing the cookie with token highlighted]
+Step 1:
+![screenshot (7)](https://github.com/user-attachments/assets/988a90af-9e5f-4819-9a85-421ab9f14d3b)
+
+Step 2: 
+![screenshot (10)](https://github.com/user-attachments/assets/c08576b0-0519-4f93-8168-7bfb7e010c4e)
+
 
 ### Demo Mode
 
