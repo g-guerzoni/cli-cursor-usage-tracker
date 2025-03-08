@@ -1,0 +1,44 @@
+{
+  "name": "cli-cursor-usage-tracker",
+  "version": "1.0.0",
+  "description": "A CLI tool to track and visualize your Cursor AI usage",
+  "main": "dist/index.js",
+  "bin": {
+    "cursor-usage": "./dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "test": "ts-node tests/run-tests.ts",
+    "demo": "ts-node tests/cli-demo.ts",
+    "check": "ts-node scripts/check-ts-errors.ts",
+    "lint": "npm run check",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "cursor",
+    "ai",
+    "usage",
+    "tracker",
+    "cli",
+    "visualization"
+  ],
+  "author": "Guilherme Guerzoni <guerzoni.guilherme@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g-guerzoni/cli-cursor-usage-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/g-guerzoni/cli-cursor-usage-tracker/issues"
+  },
+  "homepage": "https://github.com/g-guerzoni/cli-cursor-usage-tracker#readme",
+  "dependencies": {
+    "@types/readline-sync": "^1.4.8",
+    "axios": "^1.8.1",
+    "readline-sync": "^1.4.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
