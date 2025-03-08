@@ -1,6 +1,6 @@
 {
   "name": "cli-cursor-usage-tracker",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A CLI tool to track and visualize your Cursor AI usage",
   "main": "dist/index.js",
   "bin": {
@@ -8,13 +8,14 @@
   },
   "type": "module",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "node --loader ts-node/esm src/index.ts",
     "build": "tsc",
-    "test": "ts-node tests/run-tests.ts",
-    "demo": "ts-node tests/cli-demo.ts",
-    "check": "ts-node scripts/check-ts-errors.ts",
+    "test": "node --loader ts-node/esm tests/run-tests.ts",
+    "demo": "node --loader ts-node/esm tests/cli-demo.ts",
+    "check": "node --loader ts-node/esm scripts/check-ts-errors.ts",
     "lint": "npm run check",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "clean": "node --loader ts-node/esm src/index.ts --clean"
   },
   "keywords": [
     "cursor",

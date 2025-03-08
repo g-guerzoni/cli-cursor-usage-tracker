@@ -425,7 +425,43 @@ async function handleAuthError(config: CursorConfig, isFirstTimeUser: boolean): 
   }
 }
 
+// Function to clean local files
+function cleanLocalFiles() {
+  console.log('\n🧹 Cleaning local configuration files...');
+  
+  try {
+    if (fs.existsSync(CONFIG_FILE)) {
+      fs.unlinkSync(CONFIG_FILE);
+      console.log('✅ Removed config file');
+    }
+    
+    if (fs.existsSync(CACHE_FILE)) {
+      fs.unlinkSync(CACHE_FILE);
+      console.log('✅ Removed cache file');
+    }
+    
+    if (fs.existsSync(DATA_DIR)) {
+      fs.rmdirSync(DATA_DIR);
+      console.log('✅ Removed data directory');
+    }
+    
+    console.log('\n✨ All local files have been cleaned successfully!');
+    console.log('Next time you run cursor-usage, you\'ll need to authenticate again.');
+  } catch (error) {
+    console.error('❌ Error while cleaning files:', error);
+    process.exit(1);
+  }
+  
+  process.exit(0);
+}
+
 async function main() {
+  // Check for clean flag
+  if (process.argv.includes('--clean')) {
+    cleanLocalFiles();
+    return;
+  }
+
   // Load config from file or create new one
   const config = loadConfig();
   
