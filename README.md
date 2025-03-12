@@ -16,6 +16,12 @@ A command-line tool to track and visualize your Cursor AI premium request usage,
 - 🔄 Always fetches fresh data for accurate reporting
 - 💾 Stores your credentials locally for easy access
 
+## 🟠 Google Chrome Extension Store
+Try out the extension in the Google Chrome Store.
+```bash
+https://chromewebstore.google.com/detail/cursor-request-counter/dafeoklakifgkoehabbdfljakipohaii
+```
+
 ## Installation
 
 ### Option 1: Global Installation (Recommended)
