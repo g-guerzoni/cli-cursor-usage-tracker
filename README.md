@@ -10,8 +10,9 @@ A command-line tool to track and visualize your Cursor AI premium request usage,
 ## Features
 
 - 🤖 Tracks usage of Cursor AI premium requests usage
+- 💰 Displays usage-based premium requests cost (if enabled)
 - 🎨 Color-coded usage indicators (changes from blue → yellow → red as limits approach)
-- 📊 Visual progress bar showing percentage of quota used
+- 📊 Display shows percentage of quota and dollar limit used
 - 📅 Shows billing cycle information with locale-aware date formatting
 - 🔄 Always fetches fresh data for accurate reporting
 - 💾 Stores your credentials locally for easy access
