@@ -5,7 +5,7 @@ A command-line tool to track and visualize your Cursor AI premium request usage,
 [![npm version](https://badge.fury.io/js/cli-cursor-usage-tracker.svg)](https://badge.fury.io/js/cli-cursor-usage-tracker)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![screenshot (3) (2)](https://github.com/user-attachments/assets/765895a3-4c69-4ea0-bae4-f1ae4632b15c)
+![image](https://github.com/user-attachments/assets/257c701a-0ea5-4343-b8ab-46f19c03dde7)
 
 ## Features
 
