@@ -1,4 +1,4 @@
-# Cursor Usage Tracker
+# Cursor Usage Tracker (Deprecated)
 
 A command-line tool to track and visualize your Cursor AI premium request usage, with color-coded indicators.
 
